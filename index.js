@@ -34,15 +34,20 @@ function renderGame() {
     }
     
     sumEl.textContent = "Sum: " + sum
+
     if (sum <= 20) {
-        message = "Do you want to draw a new card?"
+        message = "Do you want to draw a new card?";
+        messageEl.className = "message normal"; // Apply class for normal message
     } else if (sum === 21) {
-        message = "You've got Blackjack!"
-        hasBlackJack = true
+        message = "You've got Blackjack!";
+        messageEl.className = "message blackjack"; // Apply class for blackjack message
+        hasBlackJack = true;
     } else {
-        message = "You're out of the game!"
-        isAlive = false
+        message = "You're out of the game!";
+        messageEl.className = "message out"; // Apply class for out-of-game message
+        isAlive = false;
     }
+    
     messageEl.textContent = message
 }
 
